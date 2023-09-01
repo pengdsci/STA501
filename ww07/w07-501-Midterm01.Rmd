@@ -1,0 +1,211 @@
+---
+title: 'STA501 Midterm Exam #1'
+author: 'Due:  Sunday, 11:30 PM, 3/17/21'
+date: "3/10/2021"
+output:
+  pdf_document: 
+    toc: no
+    toc_depth: 4
+    fig_caption: yes
+    number_sections: yes
+    fig_width: 4
+    fig_height: 2
+  word_document: 
+    toc: no
+    toc_depth: 4
+    fig_caption: yes
+    keep_md: yes
+  html_document: 
+    toc: no
+    toc_depth: 4
+    fig_width: 6
+    fig_height: 4
+    fig_caption: yes
+    number_sections: no
+    theme: readable
+---
+<style type="text/css">
+h1.title {
+  font-size: 20px;
+  color: DarkRed;
+  text-align: center;
+}
+h4.author { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkRed;
+  text-align: center;
+}
+h4.date { /* Header 4 - and the author and data headers use this too  */
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+  text-align: center;
+}
+h1 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 25px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: center;
+}
+h2 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+
+h3 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+
+h4 { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: left;
+}
+</style>
+
+```{r setup, include=FALSE}
+# install.packages("remotes") through github since it not
+# available from CRAN. 
+# 
+# remotes::install_github("rlesur/klippy")
+##
+# install.packages("webshot")
+# webshot::install_phantomjs()
+
+# code chunk specifies whether the R code, warnings, and output 
+# will be included in the output files.
+library(knitr)
+library(klippy)
+library(webshot)
+knitr::opts_chunk$set(echo = TRUE,      # include code chunk in the output file
+                      warnings = FALSE, # sometimes, you code may produce warning messages,
+                                        # you can choose to include the warning messages in
+                                        # the output file. 
+                      results = TRUE    # you can also decide whether to include the output
+                                        # in the output file.
+                      )  
+#```
+
+
+#```{r klippy, echo=FALSE, include=TRUE}
+#klippy::klippy(position = c('top', 'right'),color = 'darkred',tooltip_message = 'Click to copy', tooltip_success = #'Done')
+```
+
+# Introduction
+
+This is an open book and open note exam. The level of details in your solution should similar to that in the examples in the class notes.  Please keep in mind that interpretation of results is as important as generation of the results. You can use either the built-in R functions or the formulas given in the class notes to complete the exams.
+
+For confidence interval and testing hypothesis problems, you need to **justify** the sampling distributions and interpret the results. The default confidence level is 0.95 and the default significance level is 0.05.
+
+
+
+**Problem 1**
+
+In a study of physical endurance levels of male college freshmen, the following composite endurance scores based on several exercise routines were collected.
+
+```{}
+254, 281, 192, 260, 212, 179, 225, 179, 181, 149, 
+182, 210, 235, 239, 258, 166, 159, 223, 186, 190,
+180, 188, 135, 233, 220, 204, 219, 211, 245, 151, 
+198, 190, 151, 157, 204, 238, 205, 229, 191, 200,
+222, 187, 134, 193, 264, 312, 214, 227, 190, 212, 
+165, 194, 206, 193, 218, 198, 241, 149, 164, 225,
+265, 222, 264, 249, 175, 205, 252, 210, 178, 159, 
+220, 201, 203, 172, 234, 198, 173, 187, 189, 237,
+272, 195, 227, 230, 168, 232, 217, 249, 196, 223,
+232, 191, 175, 236, 152, 258, 155, 215, 197, 210,
+214, 278, 252, 283, 205, 184, 172, 228, 193, 130,
+218, 213, 172, 159, 203, 212, 117, 197, 206, 198,
+169, 187, 204, 180, 261, 236, 217, 205, 212, 218,
+191, 124, 199, 235, 139, 231, 116, 182, 243, 217,
+251, 206, 173, 236, 215, 228, 183, 204, 186, 134,
+188, 195, 240, 163, 208
+```
+Use the above data to construct a frequency table and a histogram. Describe your findings from the histogram.
+
+
+**Problem 2**
+
+Iron-deficiency anemia is an important nutritional health problem in the United States. A dietary assessment was performed on 51 boys 9 to 11 years of age whose families were below the poverty level. The mean daily iron intake among these boys was found to be 12.50 mg with a standard deviation of 4.75 mg. Suppose the mean daily iron intake among a large population of 9- to 11-year-old boys from all income strata is 14.44 mg. We want to test whether the mean iron intake among the low-income group is different from that of the general population. Carry out the hypothesis test using the critical-value method with an $\alpha$ level of .05. State the hypotheses that we can use to consider this question and summarize your findings.
+
+
+
+**Problem 3**
+
+A topic of recent clinical interest is the possibility of using drugs to reduce infarct size in patients who have had a myocardial infarction within the past 24 hours. Suppose we know that in untreated patients the mean infarct size is 25 (ck-g-EQ/m2). Furthermore, in 8 patients treated with a drug the mean infarct size is 16 with a standard deviation of 10. Is the drug effective in **reducing** infarct size? Assuming that the infarct size is normally distributed.
+
+
+
+
+**Problem 4**
+
+Drug A was prescribed for a random sample of 12 patients complaining of insomnia. An independent random sample of 16 patients with the same complaint received drug B. The number of hours of sleep experienced during the second night after treatment began were as follows.
+```{}
+A: 3.5, 5.7, 3.4, 6.9, 17.8, 3.8, 3.0, 6.4, 6.8, 3.6, 6.9, 5.7
+B: 4.5, 11.7, 10.8, 4.5, 6.3, 3.8, 6.2, 6.6, 7.1, 6.4, 4.5, 5.1, 3.2, 4.7, 4.5, 3.0
+```
+Construct a 95 percent confidence interval for the difference between the population means. Assume that the populations are normal and variances are unknown but equal. 
+
+
+
+
+
+**Problem 5**
+
+Can we conclude that, on average, lymphocytes and tumor cells differ in size? The following are the cell diameters ($\mu m$) of 40 lymphocytes and 50 tumor cells obtained from biopsies of tissue from patients with melanoma.
+
+```{}
+## Lymphocytes
+9.0,  9.4,  4.7,   4.8,  8.9,  4.9,  8.4,  5.9,  6.3,  5.7,  
+5.0,  3.5,  7.8,  10.4,  8.0,  8.0,  8.6,  7.0,  6.8,  7.1,   
+5.7,  7.6,  6.2,   7.1,  7.4,  8.7,  4.9,  7.4,  6.4,  7.1,  
+6.3,  8.8,  8.8,  5.2,  7.1,  5.3,   4.7,  8.4,  6.4,  8.3
+
+## Tumor Cells
+12.6, 14.6, 16.2, 23.9, 23.3, 17.1, 20.0, 21.0, 19.1, 19.4,
+16.7, 15.9, 15.8, 16.0, 17.9, 13.4, 19.1, 16.6, 18.9, 18.7,
+20.0, 17.8, 13.9, 22.1, 13.9, 18.3, 22.8, 13.0, 17.9, 15.2,
+17.7, 15.1, 16.9, 16.4, 22.8, 19.4, 19.6, 18.4, 18.2, 20.7,
+16.3, 17.7, 18.1, 24.3, 11.2, 19.5, 18.6, 16.4, 16.1, 21.5
+```
+
+What statistical method you are going to use to conduct the analysis. What are the assumptions for the method? Interpret your result appropriately.
+
+
+**Problem 6**
+
+To evaluate the analgesic effectiveness of a daily dose of oral methadone in patients with chronic neuropathic pain syndromes. The researchers used a visual analogue scale (0–100 mm, a higher number indicates higher pain) ratings for maximum pain intensity over the course of the day. Each subject took either 20 mg of methadone or a placebo each day for 5 days. Subjects did not know which treatment they were taking. The following table gives the mean maximum pain intensity scores for the 5 days on methadone and the 5 days on placebo. 
+
+```{}
+subject ID:    1    2    3     4    5    6   7    8   9    10   11
+methadone:   29.8 73.0 98.6 58.8 60.6 57.2 57.2 89.2 97.0 49.8 37.0
+placebo:     57.2 69.8 98.2 62.4 67.2 70.6 67.8 95.6 98.4 63.2 63.6
+```
+
+Do these data provide sufficient evidence, at the .05 level of significance, to indicate that, in general, the maximum pain intensity is lower on days when methadone is taken? Perform a formal inferential procedure and interpret the result.
+
+  
+
+**Problem 7**
+
+A study was conducted of genetic and environmental influences on cholesterol levels. The data set used for the study was obtained from a twin registry in Sweden. Specifically, four populations of adult twins were studied: (1) monozygotic (MZ) twins reared apart, (2) MZ twins reared together, (3) dizygotic (DZ) twins reared apart, and (4) DZ twins reared together. One issue is whether it is necessary to correct **potential differences** for sex before performing more complex genetic analyses. The data in the following table were presented for total cholesterol levels for MZ twins reared apart, by sex.
+
+```{}
+           Men      Women
+Mean:     253.3     271.0
+sd:        44.1      44.1
+size(n):   44        48
+```
+
+If we assume (a) serum cholesterol is normally distributed, (b) the samples are independent, and (c) the standard deviations for men and women are the same. 
+
+Using a two-sided test. State the hypotheses being tested, and implement the method. Report a p-value and interpret the result.
+
+
