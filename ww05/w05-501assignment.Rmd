@@ -1,0 +1,135 @@
+---
+title: 'STA 501 Week #5 Assignment'
+author: 'Due: 03/03/2021'
+date: ""
+output:
+  pdf_document: 
+    fig_caption: yes
+    number_sections: yes
+    fig_width: 5
+    fig_height: 4
+  html_document: 
+    toc: yes
+    toc_depth: 4
+    fig_width: 6
+    fig_height: 4
+    fig_caption: yes
+    number_sections: yes
+    theme: readable
+  word_document: 
+    toc: yes
+    toc_depth: 4
+    fig_caption: yes
+    keep_md: yes
+---
+
+<style type="text/css">
+h1.title {
+  font-size: 20px;
+  color: DarkRed;
+  text-align: center;
+}
+h4.author { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkRed;
+  text-align: center;
+}
+h4.date { /* Header 4 - and the author and data headers use this too  */
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+  text-align: center;
+}
+h1 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: center;
+}
+h2 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+
+h3 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 15px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+
+h4 { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: left;
+}
+</style>
+
+```{r setup, include=FALSE}
+
+# install.packages("remotes") through github since it not
+# available from CRAN. 
+# 
+# remotes::install_github("rlesur/klippy")
+##
+# install.packages("webshot")
+# webshot::install_phantomjs()
+
+# code chunk specifies whether the R code, warnings, and output 
+# will be included in the output files.
+library(knitr)
+library(klippy)
+knitr::opts_chunk$set(echo = TRUE,      # include code chunk in the output file
+                      warnings = FALSE, # sometimes, you code may produce warning messages,
+                                        # you can choose to include the warning messages in
+                                        # the output file. 
+                      results = TRUE    # you can also decide whether to include the output
+                                        # in the output file.
+                      )  
+```
+
+
+This assignment focuses on the applications of sampling distributions. You are expected to study the class note, particularly the examples before attempting the following problems. Please check the assumptions of each of the four results and compare them with the information given in each of the problems in the following to determine the correct sampling distribution.
+
+
+* **Problem 1**
+
+Suppose it is known that in a certain large human population cranial length is approximately
+**normally distributed** with a mean of 185.6mm and a standard deviation of 12.7 mm.
+
+(1). Find the mean and standard deviation of the sampling distribution respectively.
+
+(2). What is the probability that a random sample of size 10 from this population will have a
+mean greater than 190?
+
+
+
+* **Problem 2**
+
+The National Health and Nutrition Examination Survey of 1988–1994 (NHANES III) estimated the mean serum cholesterol level for U.S. females aged 20–74 years to be 204 mg/dl. The estimate of the standard deviation was approximately 44. Using these estimates as the mean $\mu$ and standard deviation $\sigma$ for the U.S. population, consider the sampling distribution of the sample mean based on samples of size 49 drawn from women in this age group. 
+
+(1). Find the mean and the standard deviation of the sampling distribution respectively 
+
+(2). Find the probability that the sample mean serum cholesterol level will be between 170 and 195.
+
+(3). Find the probability that the sample mean serum cholesterol level will be less than 210.
+
+(4). Find the probability that the sample mean serum cholesterol level will be bigger than 195.
+
+
+* **Problem 3**
+
+Smith et al. performed a retrospective analysis of data on 782 eligible patients admitted with
+myocardial infarction to a 46-bed cardiac service facility. Of these patients, 248 (32 percent) reported a past myocardial infarction. Use .32 as the population proportion. Suppose 50 subjects are chosen at random from the population. 
+
+(1). Find the mean and the standard deviation of the sampling distribution respectively. 
+
+(2). What is the probability that over 40 percent would report previous myocardial infarctions?
+
+
+
+

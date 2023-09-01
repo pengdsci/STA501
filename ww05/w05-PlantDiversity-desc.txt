@@ -1,0 +1,65 @@
+
+########################
+This dataset includes the geographic location (lat/lon) for 15,136 plots, as well as the herbaceous species richness, climate, soil pH, and other variables related to the plots.
+
+This dataset is associated with the following publication: Simkin, S., C. Clark , W. Bowman, E. Allen, J. Belnap, and L. Pardo. Conditional vulnerability of plant diversity to atmospheric nitrogen deposition across the United States. PNAS (PROCEEDINGS OF THE NATIONAL ACADEMY OF SCIENCES). National Academy of Sciences, WASHINGTON, DC, USA, 113(15): 4086-4091, (2016).
+#######################
+
+Source: https://catalog.data.gov/dataset/simkin-et-al-2016-pnas-data-on-herbaceous-species-richness-and-associated-plot-and-covaria
+
+
+#######################    
+Dataset accompanies Simkin et al. 2016. Conditional vulnerability of plant diversity to atmospheric nitrogen deposition across the USA. Proceedings of the National Academy of Sciences of the United States of America    
+#######################		
+		
+	
+#######################
+Variable Description
+#######################
+	
+Variable	Unit	        Description
+#---------------------------------------------
+1. latitude	Decimal degrees	Unprojected Y coordinate of site (WGS84 datum): fuzzed to the nearest 0.1 degree
+2. longitude	Decimal degrees	Unprojected X coordinate of site (WGS84 datum): fuzzed to the nearest 0.1 degree
+3. spp_richness	species / site	Observed species richness (graminoids plus forbs) at a site
+4. N_dep_kghayr	kg N / ha /yr	Total nitrogen deposition: sum of NADP wet deposition (averaged over the grids from 1985-2011) and CMAQ dry deposition (average of 2002-2011)
+5. precip_mm	mm	Annual precipitation normal from PRISM (1981-2010)
+6. temp_C_ave	degrees Celcius	Annual average temperature normal from PRISM (1981-2010)
+7. pH	pH scale	pH (field collected if available: SSURGO otherwise)
+8. CL_kghayr_lower	kg N / ha /yr	Lower bound (2.5th percentile) of 95% confidence of Critical Load (CL) of nitrogen deposition calculated in Simkin et al. 2016
+9. CL_kghayr_upper	kg N / ha /yr	Upper bound (97.5th percentile) of 95% confidence of Critical Load (CL) of nitrogen deposition calculated in Simkin et al. 2016
+10. CL_kghayr	kg N / ha /yr	Critical Load (CL) of nitrogen deposition calculated in Simkin et al. 2016: predicted nitrogen deposition at which negative impacts on species richness begin
+11. EX_kghayr	kg N / ha /yr	Exceedance of CL (N_dep_kghayr - CL_kghayr): positive values indicate an expected negative impact of of nitrogen deposition on species richness
+12. two_class_veg		Vegetation classified into open-canopy (Grassland or Shrubland or Woodland) or closed-canopy (Forest) based on NVC or closest equivalent
+13. NVC_1_name		1997 National Vegetation Classification text name for level 1 classification (Class)
+14. NVC_2_name		1997 National Vegetation Classification text name for level 2 classification (Subclass)
+15. NVC_Alliance	1997 National Vegetation Classification text name for level 6 classification (Alliance) - from PI if available
+16. proj_orig		project of origin for a particular vegetation dataset before splitting composite projects
+		
+
+
+
+
+#################################		
+proj_orig variable data sources
+#################################
+		
+proj_orig (Location : sites)	Source	
+Alvar (Northeastern US : 36)	Peet RK, Lee MT, Jennings MD, Faber-Langendoen D. Long Database Report: VegBank - a permanent open-access archive for vegetation-plot data. pp. 233-241 in Dengler et al. 2012. Downloaded from VegBank.	
+CO (Western plains of US : 17)	Peet RK, Lee MT, Jennings MD, Faber-Langendoen D. Long Database Report: VegBank - a permanent open-access archive for vegetation-plot data. pp. 233-241 in Dengler et al. 2012. Downloaded from VegBank.	
+CVS (Southeastern US : 2611)	Peet RK, Lee MT, Boyle MF, Wentworth, TR, Schafale, MP, Weakley AS. Long Database Report: Vegetation-plot database of the Carolina Vegetation Survey. pp. 243-253 in Dengler et al. 2012. Provided by Peet RK and Lee MT in 2013. Now available in VegBank.	
+FIA (Contiguous US : 1280)	Schulz BK, Dobelbower K. Short Database Report: FIADB Vegetation Diversity and Structure Indicator (VEG). p. 436 in Dengler et al. 2012. Provided by Schulz BK. Available from http://apps.fs.fed.us/fiadb-downloads/datamart.html	
+Knutson (Western US : 160)	http://sagemap.wr.usgs.gov/ESR_Chrono.aspx and Knutson et al. 2014. Provided by Knutson KC.	
+MN (Upper Midwest US : 2896)	Provided by Minnesota Biological Survey, 2013 State of Minnesota, Department of Natural Resources.	
+NY (Northeastern US : 75)	Peet RK, Lee MT, Jennings MD, Faber-Langendoen D. Long Database Report: VegBank - a permanent open-access archive for vegetation-plot data. pp. 233-241 in Dengler et al. 2012. Downloaded from VegBank.	
+PNW (Pacific NW of US : 3570)	Peet RK, Lee MT, Jennings MD, Faber-Langendoen D. Long Database Report: VegBank - a permanent open-access archive for vegetation-plot data. Pp. 233-241 in Dengler et al. 2012. Downloaded from VegBank.	
+SW (Southwestern US : 106)	Provided by the Southern Colorado Plateau Network of the US NPS and the lab of Bowman WD.	
+VA (Southeastern US : 2777)	Provided by the Virginia Department of Conservation and Recreation, Division of Natural Heritage, VA Plots, the DCR-DNH Vegetation Plots Database. Data exported on 03-08-2013. Richmond, Virginia, 23219. Now available in VegBank.	
+WI (Upper Midwest US : 112)	Waller DM, Amatangelo KL, Johnson S, Rogers DA. Long Database Report: Wisconsin Vegetation Database - plant community survey and resurvey data from the Wisconsin Plant Ecology Laboratory. Pp. 255-264 in Dengler et al. 2012. Provided by Waller DM.	
+WV (Southeastern US : 1496)	Vanderhorst JP, Byers EA, Streets BP. Short Database Report: Natural Heritage Vegetation Database for West Virginia. p. 440 in Dengler et al. 2012. Provided by the West Virginia Natural Heritage Program. Now available in VegBank.	
+		
+##############################		
+Literature Cited		
+##############################
+Dengler J, Oldeland J, Jansen F, Chytry M, Ewald J, Finckh M, Glockler F, Lopez-Gonzalez G, Peet RK, Schaminee, JHJ. 2012. Special Volume: Vegetation databases for the 21st century. Biodiversity & Ecology.  447 pages.		
+Knutson KC, Pyke DA, Wirth TA, Arkle RS, Pilliod DS, Brooks ML, Chambers JC, Grace JB. 2014. Long-term effects of seeding after wildfire on vegetation in Great Basin shrubland ecosystems. Journal of Applied Ecology 51:1414-1424.		

@@ -1,0 +1,145 @@
+---
+title: 'STA501 Week #3 Assignment'
+author: 'Due: 11:30 PM, Sunday, 2/14/2021'
+date: "2/9/2021"
+output:
+  word_document:
+    toc: yes
+    toc_depth: '4'
+  html_document:
+    toc: yes
+    toc_depth: 4
+    fig_width: 6
+    fig_height: 4
+    fig_caption: yes
+    number_sections: yes
+    theme: readable
+  pdf_document: 
+    toc: yes
+    toc_depth: 4
+    fig_caption: yes
+    number_sections: yes
+---
+
+<style type="text/css">
+h1.title {
+  font-size: 20px;
+  color: DarkRed;
+  text-align: center;
+}
+h4.author { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkRed;
+  text-align: center;
+}
+h4.date { /* Header 4 - and the author and data headers use this too  */
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+  text-align: center;
+}
+h1 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: center;
+}
+h2 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+h3 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 15px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+h4 { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: left;
+}
+</style>
+
+
+```{r setup, include=FALSE}
+# code chunk specifies whether the R code, warnings, and output 
+# will be included in the output files.
+library(knitr)
+knitr::opts_chunk$set(echo = TRUE,           # include code chunk in the output file
+                      warnings = FALSE,       # sometimes, you code may produce warning messages,
+                                              # you can choose to include the warning messages in
+                                              # the output file. 
+                      results = TRUE          # you can also decide whether to include the output
+                                              # in the output file.
+                      )   
+```
+
+
+# Introduction and Data Source
+
+This week's assignment focuses on the descriptive statistics using R. The **Diabetes** data set to be used in this assignment is taken from [Vanderbilt's Biostatistics Datasets](https://hbiostat.org/data/).
+
+The following is the description from the web page:
+
+These data are courtesy of Dr. John Schorling, Department of Medicine, University of Virginia School of Medicine.
+The data consist of 19 variables on 403 subjects from 1046 subjects who were interviewed in a study to understand the prevalence of obesity, diabetes, and other cardiovascular risk factors in central Virginia for African Americans. According to Dr. John Hong, Diabetes Mellitus Type II (adult-onset diabetes) is associated most strongly with obesity. The waist/hip ratio may be a predictor of diabetes and heart disease. DM II is also associated with hypertension - they may both be part of "Syndrome X". The 403 subjects were the ones who were actually screened for diabetes. Glycosolated hemoglobin > 7.0 is usually taken as a positive diagnosis of diabetes. For more information about this study see
+
+Willems JP, Saunders JT, DE Hunt, JB Schorling: Prevalence of coronary heart disease risk factors among rural blacks: A community-based study. *Southern Medical Journal* 90:814-820; 1997
+
+Schorling JB, Roach J, Siegel M, Baturka N, Hunt DE, Guterbock TM, Stewart HL: A trial of church-based smoking cessation interventions for rural African Americans. *Preventive Medicine* 26:92-101; 1997.
+
+
+
+```{r}
+diabetes <- read.csv("https://raw.githubusercontent.com/pengdsci/STA501/main/Data/diabetes.csv", header = TRUE)
+kable(head(diabetes))
+```
+
+We can see from the first 6 observations that there are 15 numerical variables and 3 categorical variables. Variable **bp.2s** and **bp.2d** have missing values. To complete this week's assignment, you need to choose one numerical variable and one categorical variable with NO missing values.
+
+The following code shows how to extract variables from the data frame. I will use the two variables with missing values as an example. You can modify the code to extract your variables for the assignment.
+
+```{r}
+bp.2s <- diabetes$bp.2s
+bp.2d <- diabetes$bp.2d
+```
+
+# Assignments for This Week: <font color = "blue"><b>Due: 11:30 PM, Sunday, 2/14/2021</b></font>
+
+This assignment focuses on descriptive statistics on categorical and numerical data. Please prepare an R Markdown document to complete the assignment. <font color = "red">You are expected to submit the RMarkdown document and one of the three converted documents: HTML, PDF, and Word.</font>
+
+## Summarizing Categorical Data
+
+Use the categorical variable you selected to perform the following analysis
+
+1. **Construct a <font color = "red">relative frequency table</font>**. write a few sentences to describe the distribution of the variable.  Note that you are encouraged to construct a frequency table with all four types of frequencies as I did in the class note. 
+
+2. **Construct a pie-chart** to represent the distribution of the categorical variable.
+
+## Summarizing Numerical Data
+
+Using the numerical variable you chose from the diabetes data to answer the following questions.
+
+3. **Construct a <font color = "red">relative frequency table of the numerical variable</font>** with 10 categories. In other words, the frequency table should have 10 rows. You are encouraged to include all 4 frequencies in the table. Please provide a brief description of the relative frequencies.
+
+
+4. **Construct a histogram of the numerical variable** with 10 vertical bars. In other words, the histogram is a geometric representation of the frequency table. Explain the distribution of the variable. Is it skewed to the left or the right?
+
+5. **Construct a box-plot** and explain it. That is, can you tell whether the distribution is skewed to the right or the left?  
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+---
+title: 'STA501 Week #4 Assignment'
+author: 'Due: 11:30 PM, Tuesday, 2/23/2021'
+date: "2/14/2021"
+output:
+  pdf_document: 
+    toc: yes
+    toc_depth: 4
+    fig_caption: yes
+    number_sections: yes
+  html_document:
+    toc: yes
+    toc_depth: 4
+    fig_width: 6
+    fig_height: 4
+    fig_caption: yes
+    number_sections: yes
+    theme: readable
+  word_document:
+    toc: yes
+    toc_depth: '4'
+---
+
+<style type="text/css">
+h1.title {
+  font-size: 20px;
+  color: DarkRed;
+  text-align: center;
+}
+h4.author { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkRed;
+  text-align: center;
+}
+h4.date { /* Header 4 - and the author and data headers use this too  */
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+  text-align: center;
+}
+h1 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: center;
+}
+h2 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+h3 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 15px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+h4 { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: left;
+}
+</style>
+
+
+```{r setup, include=FALSE}
+# code chunk specifies whether the R code, warnings, and output 
+# will be included in the output files.
+library(knitr)                           # load to R work-space to use functions in it.
+knitr::opts_chunk$set(echo = TRUE,       # include code chunk in the output file.
+                      warnings = FALSE,  # sometimes, you code may produce warning messages,
+                                         # you can choose to include the warning messages in
+                                         # the output file. 
+                      results = TRUE     # you can also decide whether to include the output
+                                         # in the output file.
+                      )   
+```
+
+
+# Introduction 
+
+We focus on the concepts of random variables and their corresponding distributions. Two basic types of questions are will face very often in this course are to find (1) left-tail probability (area under the density curve) and (2) quantile under given conditions for all continuous distributions. We present numerical examples on normal and t distributions in the last part of the class note. In this assignment, you will do problems similar to the last two examples. You can use the codes provided in the class note [HTML or PDF]. I also include RMD on the course web page but not required. In case some of you want to learn more advanced R coding, the source RMD is useful.
+
+**kable()** function is in library **{knitr}**. If you have not installed this package on your computer, you will receive an error `could not find function "kable" calls:`. The following screenshot shows how to install a package on your computer.
+
+```{r echo=FALSE, fig.align ="center", fig.cap="Install Packages on computer.", fig.height=4,fig.width=4, dev="jpeg"}
+include_graphics("w04-install-pack.jpg")
+```
+
+
+
+# Assignments for This Week: <font color = "red"><b>Due: 11:30 PM, Tuesday, 2/23/2021</b></font>
+
+This assignment focuses on the two types of questions using normal distributions. Please prepare an R Markdown document to complete the assignment. <font color = "red">You are expected to submit the RMarkdown document and one of the three converted documents: HTML, PDF, and Word.</font>
+
+## Problem 1
+
+The size of fish is very important to commercial fishing. A study conducted in 2012 found the length of Atlantic cod caught in nets in Karlskrona to have a mean of 49.9 cm and a standard deviation of 3.74 cm (Ovegard, Berndt & Lunneryd, 2012). Assume the length of fish is normally distributed.
+
+  1. State the random variable.
+  2. Find the probability that an Atlantic cod has a length less than 52 cm.
+  3. Find the probability that an Atlantic cod has a length of more than 74 cm.
+  4. Find the probability that an Atlantic cod has a length between 40.5 and 57.5 cm.
+  5. If you found an Atlantic cod to have a length of more than 74 cm, what could you conclude?
+  6. What length are 15% of all Atlantic cod longer than?
+
+
+
+## Problem 2
+
+The mean yearly rainfall in Sydney, Australia, is about 137 mm and the standard deviation is about 69 mm ("Annual maximums of," 2013). Assume rainfall is normally distributed.
+
+  1. State the random variable.
+  2. Find the probability that the yearly rainfall is less than 100 mm.
+  3. Find the probability that the yearly rainfall is more than 240 mm.
+  4. Find the probability that the yearly rainfall is between 140 and 250 mm.
+  5. If a year has a rainfall less than 100mm, does that mean it is an unusually dry year? Why or why not?
+  6. What rainfall amount are 90% of all yearly rainfalls more than?
+
+
+
+
+
+
+
+
+
+
+

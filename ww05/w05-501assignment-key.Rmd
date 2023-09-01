@@ -1,0 +1,183 @@
+---
+title: 'STA 501 Week #5 Assignment'
+author: 'Due: 03/03/2021'
+date: ""
+output:
+  html_document: 
+    toc: yes
+    toc_depth: 4
+    fig_width: 6
+    fig_height: 4
+    fig_caption: yes
+    number_sections: yes
+    theme: readable
+  pdf_document: 
+    fig_caption: yes
+    number_sections: yes
+    fig_width: 5
+    fig_height: 4
+  word_document: 
+    toc: yes
+    toc_depth: 4
+    fig_caption: yes
+    keep_md: yes
+---
+
+<style type="text/css">
+h1.title {
+  font-size: 20px;
+  color: DarkRed;
+  text-align: center;
+}
+h4.author { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkRed;
+  text-align: center;
+}
+h4.date { /* Header 4 - and the author and data headers use this too  */
+  font-size: 18px;
+  font-family: "Times New Roman", Times, serif;
+  color: DarkBlue;
+  text-align: center;
+}
+h1 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 22px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: center;
+}
+h2 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+
+h3 { /* Header 3 - and the author and data headers use this too  */
+    font-size: 15px;
+    font-family: "Times New Roman", Times, serif;
+    color: navy;
+    text-align: left;
+}
+
+h4 { /* Header 4 - and the author and data headers use this too  */
+    font-size: 18px;
+    font-family: "Times New Roman", Times, serif;
+    color: darkred;
+    text-align: left;
+}
+</style>
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE,      # include code chunk in the output file
+                      warnings = FALSE, # sometimes, you code may produce warning messages,
+                                        # you can choose to include the warning messages in
+                                        # the output file. 
+                      results = TRUE    # you can also decide whether to include the output
+                                        # in the output file.
+                      )  
+```
+
+
+This assignment focuses on the applications of sampling distributions. You are expected to study the class note, particularly the examples before attempting the following problems. Please check the assumptions of each of the four results and compare them with the information given in each of the problems in the following to determine the correct sampling distribution.
+
+
+* **Problem 1**
+
+Suppose it is known that in a certain large human population cranial length is approximately
+**normally distributed** with a mean of 185.6mm and a standard deviation of 12.7 mm.
+
+(1). Find the mean and standard deviation of the sampling distribution respectively.
+
+**Solution:** Since the population is normally distributed. Using the property of the normal distribution, we have 
+$\bar{x} \to N(185.6, 12.7/\sqrt{n})$. If the underlying sample size is given, we can uniquely determine the sampling distribution of the sample mean $\bar{x}$.
+
+(2). What is the probability that a random sample of size 10 from this population will have a
+mean greater than 190?
+
+**Solution:**  We given that the sample $n = 10$. The exact sampling distribution of the sample mean is given by
+$\bar{x} \to N(185.6, 12.7/\sqrt{10})$.  The probability $P(\bar{x} > 190)$ can be found in the following R code.
+
+```{r}
+1 - pnorm(190, 185.6, 12.7/sqrt(10))   # the right-tail area = 1 - left-tail area
+```
+
+Therefore, $P(\bar{x} > 190) \approx 13.66%$. 
+
+
+
+* **Problem 2**
+
+The National Health and Nutrition Examination Survey of 1988–1994 (NHANES III) estimated the mean serum cholesterol level for U.S. females aged 20–74 years to be 204 mg/dl. The estimate of the standard deviation was approximately 44. Using these estimates as the mean $\mu$ and standard deviation $\sigma$ for the U.S. population, consider the sampling distribution of the sample mean based on samples of size 49 drawn from women in this age group. 
+
+(1). Find the mean and the standard deviation of the sampling distribution respectively 
+
+**Solution:** Since the sample size $n = 49 > 30$, we can use the Central Limit Theorem to specify the sampling distribution of the sample mean $\bar{x}$ in the following
+
+$$
+\bar{x} \to N(204, 44/\sqrt{49}) = N(204, 44/7)
+$$
+The next few questions will be based on the above distribution.
+
+
+(2). Find the probability that the sample mean serum cholesterol level will be between 170 and 195.
+
+**Solution:** We want to find $P(170 < \bar{x} < 195) = P(\bar{x} < 195) - P(\bar{x} < 170)$, that is, the difference between the two left-tail areas. The probability can be found in the following code.
+
+```{r}
+pnorm(195, mean=204, sd = 44/7) - pnorm(170, mean=204, sd = 44/7)
+```
+
+Therefore, the probability that the sample mean serum cholesterol level will be between 170 and 195 is about $7.61\%$.
+
+
+(3). Find the probability that the sample mean serum cholesterol level will be less than 210.
+
+**Solution:** The desired probability $P(\bar{x} < 210)$ is simply the left tail area.
+
+```{r}
+pnorm(210, 204, 44/7)
+```
+
+Therefore, the probability that the sample mean serum cholesterol level will be less than 210 is about $83\%$.
+
+
+(4). Find the probability that the sample mean serum cholesterol level will be bigger than 195.
+
+**Solution:** The probability $P(\bar{x} > 195)$ can be found by the following code.
+
+```{r}
+1- pnorm(195, 204, 44/7)
+```
+Therefore, the probability that the sample mean serum cholesterol level will be bigger than 195 is about $93.4\%$.
+
+
+* **Problem 3**
+
+Smith et al. performed a retrospective analysis of data on 782 eligible patients admitted with
+myocardial infarction to a 46-bed cardiac service facility. Of these patients, 248 (32 percent) reported a past myocardial infarction. Use .32 as the population proportion. Suppose 50 subjects are chosen at random from the population. 
+
+(1). Find the mean and the standard deviation of the sampling distribution respectively. 
+
+**Solution:** **Caution**- quantities 782 and 248 were used only to approximate the population proportion $p=0.32$. The actual sample size is $n = 50$. Since $np = 50\times 0.32 = 16$ and $n(1-p) = 50*(1-0.32) = 34 > 5.$. By the Central Limit Theorem, we have 
+
+$$
+\hat{p} \to N\left(0.32, \sqrt{\frac{0.32\times(1-0.32)}{50}} \right) = N(0.32, 0.066)
+$$
+Therefore, mean and the standard deviation of the sampling distribution are 0.32 and 0.066, respectively.
+
+(2). What is the probability that over 40 percent would report previous myocardial infarctions?
+
+**Solution** Using the above sampling distribution of the the sample proportion, we can find $P(\hat{p} > 0.4)$ with the following R code.
+
+```{r}
+1 - pnorm(0.4, 0.32, 0.066)  # right-tail area
+```
+
+That is, $P(\hat{p} > 0.4) = 11.27\%$ meaning that the probability that over 40 percent would report previous cordiality infarction's is $11.27\%$.
+
+
+
+
